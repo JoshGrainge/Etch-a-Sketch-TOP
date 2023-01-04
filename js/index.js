@@ -26,6 +26,9 @@ resetBtn.classList.add('button');
 resetBtn.addEventListener('click', () => {
     destroyGrid();
     createGrid();
+
+    // start shaking etch-n-sketch
+    redBorder.classList.add('shaking');
 });
 
 document.body.appendChild(resetBtn);
@@ -57,6 +60,11 @@ rightKnob.classList.add('right');
 knobsDiv.appendChild(leftKnob);
 knobsDiv.appendChild(rightKnob);
 redBorder.appendChild(knobsDiv);
+
+// shaking logic
+redBorder.addEventListener('animationend', () => {
+    redBorder.classList.remove('shaking');
+})
 
 document.body.appendChild(redBorder);
 
